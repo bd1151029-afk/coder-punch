@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高美惠 Gao Meihui | 個人作品集 & 簡歷</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        brandGraphite: '#0F172A',
+                        brandIndigo: '#6366F1',
+                        brandViolet: '#A855F7',
+                        brandRose: '#F43F5E',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+        }
+
+        /* Glassmorphism Header Pill */
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Cool Glow Ring Animation for Photo Container */
+        .photo-ring {
+            position: relative;
+        }
+        .photo-ring::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 2rem;
+            background: linear-gradient(135deg, #6366F1, #A855F7, #EC4899);
+            opacity: 0.75;
+            filter: blur(12px);
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+        .photo-ring:hover::before {
+            opacity: 1;
+            filter: blur(18px);
+        }
+
+        /* Custom Cool Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #C084FC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-900 selection:bg-indigo-600 selection:text-white">
+
+    <!-- Subtle Cool Background Gradient Blobs -->
+    <div class="fixed top-0 left-1/4 w-[28rem] h-[28rem] bg-indigo-200/40 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-10 right-1/4 w-[28rem] h-[28rem] bg-purple-200/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="fixed top-1/2 left-10 w-80 h-80 bg-slate-200/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Floating Navigation Bar -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-2xl">
+        <nav class="glass-pill rounded-full px-5 py-3 flex items-center justify-between shadow-xl shadow-slate-200/50">
+            <!-- Brand -->
+            <a href="#hero" class="flex items-center space-x-2.5 group">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white font-black text-xs shadow-md group-hover:rotate-12 transition-transform">
+                    高
+                </div>
+                <span class="font-bold text-slate-900 text-sm tracking-wide">高美惠</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm font-semibold text-slate-600">
+                <a href="#hero" class="hover:text-indigo-600 transition-colors">首頁</a>
+                <a href="#about" class="hover:text-indigo-600 transition-colors">關於我</a>
+                <a href="#skills" class="hover:text-indigo-600 transition-colors">技能與興趣</a>
+                <a href="#contact" class="hover:text-indigo-600 transition-colors">聯繫方式</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="max-w-3xl mx-auto px-5 pt-28 pb-16 space-y-12">
+
+        <!-- SECTION 1: HERO / PERSONAL INTRODUCTION -->
+        <section id="hero" class="pt-2">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl shadow-slate-200/60 space-y-6">
+                
+                <!-- Department & Identity Badge -->
+                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold">
+                        <span class="w-2 h-2 rounded-full bg-indigo-600 animate-ping"></span>
+                        <span>黎明技術學院 · 數位多媒體系</span>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Storyteller & Multimedia Creator</span>
+                </div>
+
+                <!-- Hero Content Area -->
+                <div class="space-y-4">
+                    <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        高美惠 <span class="gradient-text font-extrabold text-2xl sm:text-3xl ml-1">Gao Meihui</span>
+                    </h1>
+
+                    <!-- One-Sentence Motto Box -->
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 shadow-inner">
+                        <p class="text-sm sm:text-base font-bold text-slate-700 italic flex items-center gap-2">
+                            <i class="fa-solid fa-quote-left text-indigo-400 text-xs"></i>
+                            <span>喜歡簡單生活，也喜歡認真對待每一件事。</span>
+                            <i class="fa-solid fa-quote-right text-indigo-400 text-xs"></i>
+                        </p>
+                    </div>
+
+                    <!-- Quick Overview Tags -->
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200/60">✍️ 小說創作專攻</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200/60">📜 故事腳本構思</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200/60">🎵 音樂賞析</span>
+                        <span class="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200/60">📚 深度閱讀</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT ME (WITH PHOTO PREVIEW SPOT) -->
+        <section id="about" class="space-y-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-2.5 h-6 bg-gradient-to-b from-indigo-600 to-purple-600 rounded-full"></div>
+                <h2 class="text-lg font-black text-slate-900 tracking-tight">關於我</h2>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl shadow-slate-200/60 flex flex-col sm:flex-row items-center gap-8">
+                
+                <!-- PHOTO CONTAINER SPOT (With Local File Preview Feature) -->
+                <div class="shrink-0">
+                    <div class="photo-ring group relative cursor-pointer" 
+                         onclick="document.getElementById('photoInput').click()" 
+                         title="點擊選擇並預覽您的個人照片" 
+                         tabindex="0" 
+                         onkeydown="if(event.key==='Enter'||event.key===' '){document.getElementById('photoInput').click();}">
+                        
+                        <div class="relative z-10 w-44 h-44 sm:w-48 sm:h-48 rounded-2xl overflow-hidden bg-slate-100 border-2 border-white shadow-md flex items-center justify-center">
+                            <!-- Display Image -->
+                            <img id="profileImage" 
+                                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop" 
+                                 alt="高美惠 個人照片" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/6366F1/FFFFFF?text=Gao+Meihui';" />
+                            
+                            <!-- Upload Overlay -->
+                            <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-[2px]">
+                                <i class="fa-solid fa-camera text-xl"></i>
+                                <span>上傳 / 更換照片</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Input for Local Photo Preview -->
+                    <input type="file" id="photoInput" accept="image/*" class="hidden" onchange="previewPhoto(event)">
+                    <div class="text-[11px] text-slate-400 text-center mt-2.5 font-medium">💡 點擊上方框格可更換個人照片</div>
+                </div>
+
+                <!-- Personal Bio Text -->
+                <div class="space-y-3.5 flex-1 text-center sm:text-left">
+                    <h3 class="text-xl font-extrabold text-slate-900">
+                        文字構建世界，認真感知生活。
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                        我是高美惠，現就讀於 **黎明技術學院 數位多媒體系**。我擅長將豐富的想像力轉化為動人的文字，專注於小說創作、故事腳本設計與文字創作。在數位多媒體的領域中，我深信文字是所有視覺與互動體驗的核心靈魂。
+                    </p>
+                    <div class="pt-2">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-lg bg-slate-100 text-slate-600 text-xs font-bold">
+                            <i class="fa-solid fa-graduation-cap text-indigo-500"></i>
+                            <span>數位多媒體與數位敘事研究</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: SKILLS & INTERESTS -->
+        <section id="skills" class="space-y-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-2.5 h-6 bg-gradient-to-b from-purple-600 to-pink-500 rounded-full"></div>
+                <h2 class="text-lg font-black text-slate-900 tracking-tight">專業技能 & 生活興趣</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Skills Box -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                        <span class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-nib text-indigo-600"></i> 核心技能
+                        </span>
+                        <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full font-mono">SPECIALTY</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Main Skill: Novel Writing -->
+                        <div class="p-3 rounded-2xl bg-indigo-50/60 border border-indigo-100 space-y-2">
+                            <div class="flex justify-between items-center text-xs font-bold">
+                                <span class="text-indigo-950 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-book-bookmark text-indigo-600"></i> 小說創作 (Novel Writing)
+                                </span>
+                                <span class="text-indigo-600">精通 · 核心專長</span>
+                            </div>
+                            <div class="w-full bg-indigo-200/70 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 h-full rounded-full w-[95%]"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500">角色塑造、世界觀建構、流暢敘事與情節佈局。</p>
+                        </div>
+
+                        <!-- Secondary Skill: Story Scripting -->
+                        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
+                            <div class="flex justify-between items-center text-xs font-bold">
+                                <span class="text-slate-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-scroll text-purple-600"></i> 故事腳本構思
+                                </span>
+                                <span class="text-purple-600">熟練</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-purple-600 h-full rounded-full w-[85%]"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500">多媒體劇本、互動分鏡敘事與企劃腳本撰寫。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interests Box -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xl shadow-slate-200/40 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-2.5 mb-3">
+                            <span class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-heart text-pink-500"></i> 個人興趣
+                            </span>
+                            <span class="text-[10px] font-bold text-pink-500 bg-pink-50 px-2.5 py-0.5 rounded-full font-mono">HOBBIES</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <!-- Music Card -->
+                            <div class="p-4 rounded-2xl bg-slate-50 hover:bg-indigo-50/60 border border-slate-200/60 hover:border-indigo-100 transition-all text-center space-y-2 group">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mx-auto text-base group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-headphones"></i>
+                                </div>
+                                <div class="font-bold text-xs text-slate-900">聽音樂</div>
+                                <div class="text-[10px] text-slate-400">激發靈感與情緒節奏</div>
+                            </div>
+
+                            <!-- Book Reading Card -->
+                            <div class="p-4 rounded-2xl bg-slate-50 hover:bg-purple-50/60 border border-slate-200/60 hover:border-purple-100 transition-all text-center space-y-2 group">
+                                <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto text-base group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </div>
+                                <div class="font-bold text-xs text-slate-900">看書</div>
+                                <div class="text-[10px] text-slate-400">吸收養分與視野積累</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-2 border-t border-slate-100">
+                        <span class="text-[11px] text-slate-400 font-medium">以閱讀與音樂為養分，認真對待創作 📖✨</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT SECTION -->
+        <section id="contact" class="space-y-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-2.5 h-6 bg-gradient-to-b from-indigo-600 to-rose-500 rounded-full"></div>
+                <h2 class="text-lg font-black text-slate-900 tracking-tight">聯繫方式</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                
+                <!-- Email Card -->
+                <div class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-md shadow-slate-200/40 flex flex-col justify-between space-y-3.5">
+                    <div class="flex items-center justify-between">
+                        <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400">EMAIL</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">電子郵件</div>
+                        <div class="text-xs font-bold text-slate-800 break-all select-all">bd1151006@venus.lit.edu.tw</div>
+                    </div>
+                    <button type="button" 
+                            onclick="copyText('bd1151006@venus.lit.edu.tw', 'Email 已複製到剪貼簿！')" 
+                            class="w-full py-2 rounded-xl bg-indigo-50 hover:bg-indigo-600 hover:text-white text-indigo-700 font-bold text-xs transition-colors shadow-sm">
+                        複製 Email
+                    </button>
+                </div>
+
+                <!-- Line ID Card -->
+                <div class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-md shadow-slate-200/40 flex flex-col justify-between space-y-3.5">
+                    <div class="flex items-center justify-between">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-line"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400">LINE</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Line ID</div>
+                        <div class="text-xs font-bold text-slate-800 select-all font-mono">punch_woimae</div>
+                    </div>
+                    <button type="button" 
+                            onclick="copyText('punch_woimae', 'Line ID 已複製！')" 
+                            class="w-full py-2 rounded-xl bg-emerald-50 hover:bg-emerald-600 hover:text-white text-emerald-700 font-bold text-xs transition-colors shadow-sm">
+                        複製 Line ID
+                    </button>
+                </div>
+
+                <!-- Instagram Card -->
+                <div class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-md shadow-slate-200/40 flex flex-col justify-between space-y-3.5">
+                    <div class="flex items-center justify-between">
+                        <div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold text-slate-400">INSTAGRAM</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Instagram</div>
+                        <div class="text-xs font-bold text-slate-800 font-mono">@ssaithann</div>
+                    </div>
+                    <a href="https://instagram.com/ssaithann" target="_blank" rel="noopener noreferrer" 
+                       class="w-full py-2 rounded-xl bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 text-white font-bold text-xs text-center block hover:opacity-90 transition-opacity shadow-sm">
+                        前往 IG <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-slate-400 border-t border-slate-200/60">
+        <p>© <span id="year"></span> 高美惠 Gao Meihui · 黎明技術學院 數位多媒體系</p>
+    </footer>
+
+    <!-- Toast Notification Popup -->
+    <div id="toast" aria-live="polite" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 text-white px-4 py-3 rounded-2xl flex items-center space-x-3 shadow-2xl border border-slate-800">
+            <div class="w-5 h-5 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center text-[10px] font-black">
+                ✓
+            </div>
+            <span id="toastMsg" class="text-xs font-semibold tracking-wide">複製成功！</span>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Auto Update Footer Year
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+        });
+
+        // Local Image Preview Upload Logic
+        function previewPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('profileImage');
+                    if (img) img.src = e.target.result;
+                    showToast('已成功更新個人照片預覽！');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Toast Popup Helper
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            if (!toast || !toastMsg) return;
+
+            toastMsg.textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Clipboard Copy Logic
+        function copyText(text, successMessage) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(successMessage);
+                }).catch(() => {
+                    fallbackCopy(text, successMessage);
+                });
+            } else {
+                fallbackCopy(text, successMessage);
+            }
+        }
+
+        function fallbackCopy(text, successMessage) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(successMessage);
+            } catch (err) {
+                showToast("複製失敗，請手動選取複製");
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
